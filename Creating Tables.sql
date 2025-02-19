@@ -65,6 +65,17 @@ select distinct count(*) from credit_card_db.member_score;
 
 -- COMMAND ----------
 
+-- MAGIC %md
+-- MAGIC **Cleaning Transactions Table**
+-- MAGIC
+-- MAGIC There are duplicates present in transactions table. Remove duplicates and create silver transactions table
+
+-- COMMAND ----------
+
+SELECT COUNT(card_id, transaction_dt)  AS COUNT FROM credit_card_db.transactions
+
+-- COMMAND ----------
+
 SELECT COUNT(DISTINCT card_id, transaction_dt)  AS COUNT FROM credit_card_db.transactions
 
 -- COMMAND ----------
